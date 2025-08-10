@@ -1,4 +1,4 @@
-export const claimReducer = (state, action) => {
+export const ClaimReducers = (state, action) => {
   switch (action.type) {
     case "GET_CLAIMS":
       return {
