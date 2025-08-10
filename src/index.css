@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: "border-box";
+  scroll-behavior: smooth;
+  font-family: montserrat;
+}
+
+html,
+body {
+  overflow: auto; /* or scroll if you still want it scrollable without scrollbar */
+
+  /* Hide scrollbar on Firefox */
+  scrollbar-width: none;
+
+  /* Hide scrollbar on IE 10+ */
+  -ms-overflow-style: none;
+}
+
+/* Hide scrollbar on WebKit (Chrome, Safari, Edge) */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom focus ring for all form elements */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 2px rgba(34, 211, 238, 0.6),
+    0 0 10px rgba(34, 211, 238, 0.4);
+  transition: box-shadow 0.2s ease;
+  border-color: rgba(34, 211, 238, 0.4); /* optional border glow */
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* h1,
+h2,
+h3,
+h4 {
+  font-family: palanquin;
+} */
+
+/* p,
+a,
+input,
+textarea {
+  font-family: montserrat;
+}
+
+button {
+  font-family: montserrat;
+} */
+
+@layer utilities {
+  .c-space {
+    @apply sm:px-14 px-6;
+  }
+}
+
+.loader {
+  width: 90px;
+  padding: 5.5px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #04bb6e;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes blob1 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(40px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-30px, 30px) scale(0.95);
+  }
+}
+@keyframes blob2 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-40px, 60px) scale(1.05);
+  }
+  66% {
+    transform: translate(20px, -30px) scale(0.9);
+  }
+}
+@keyframes blob3 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(25px, 15px) scale(1.2);
+  }
+  66% {
+    transform: translate(-20px, -15px) scale(0.85);
+  }
+}
+
+.animate-blob1 {
+  animation: blob1 12s ease-in-out infinite;
+}
+.animate-blob2 {
+  animation: blob2 10s ease-in-out infinite;
+}
+.animate-blob3 {
+  animation: blob3 14s ease-in-out infinite;
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.animate-fade-up {
+  animation: fadeUp 1s ease-out both;
+}
+
+.shadow-cyan-500\/30 {
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+}
+.shadow-pink-500\/30 {
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
+}
+.shadow-violet-500\/30 {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+@keyframes blob-move-1 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(40px, -30px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 40px) scale(0.95);
+  }
+}
+
+@keyframes blob-move-2 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(-50px, 30px) scale(1.05);
+  }
+  75% {
+    transform: translate(30px, -40px) scale(1.1);
+  }
+}
+
+@keyframes blob-move-3 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  20% {
+    transform: translate(30px, 30px) scale(1.1);
+  }
+  80% {
+    transform: translate(-30px, -30px) scale(0.9);
+  }
+}
+
+/* @keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  }
+} */
