@@ -63,7 +63,7 @@ const SignUp = ({ setLoading }) => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full px-4 py-3 rounded-md bg-white/10 border border-white/10 text-white placeholder-white/60 focus:outline-none focus:ring-1 backdrop-blur-md"
-                placeholder="you@example.com"
+                placeholder="email@gmail.com"
               />
             </div>
 
